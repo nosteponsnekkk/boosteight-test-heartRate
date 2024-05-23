@@ -98,9 +98,11 @@ public final class SplashViewController: UIViewController {
             self?.progressView.alpha = 1
         } completion: { [weak self] _ in
             self?.progressView.mockLoading()
+            self?.animatedHeart.startPulse()
         }
     }
     private func animateOut(){
+        animatedHeart.stopPulse()
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.5) { [weak self] in
                 guard let self else { return }
                 animatedHeart.transform = animatedHeart.transform.scaledBy(x: 0.9, y: 0.9)
@@ -110,6 +112,8 @@ public final class SplashViewController: UIViewController {
                 self?.animatedHeart.alpha = 0
                 self?.titleLabel.alpha = 0
                 self?.progressView.alpha = 0
+            } completion: { [weak self] _ in
+                self?.coordinator?.finishSplash()
             }
         }
     

@@ -17,13 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
         
-        let naviagtionController = UINavigationController()
-        naviagtionController.isNavigationBarHidden = true
+        let navigationController = UINavigationController()
+        navigationController.isNavigationBarHidden = true
         
-        coordinator = MainCoordinator(naviagtionController: naviagtionController)
+        coordinator = MainCoordinator(navigationController: navigationController)
         coordinator?.start()
         
-        window?.rootViewController = naviagtionController
+        window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
         
     }

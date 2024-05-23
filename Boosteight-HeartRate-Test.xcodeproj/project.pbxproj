@@ -23,6 +23,14 @@
 		7CE8484C2BFE19EE0073C739 /* BottomContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8484B2BFE19EE0073C739 /* BottomContainerView.swift */; };
 		7CE8484E2BFE20290073C739 /* CGFloat+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8484D2BFE20290073C739 /* CGFloat+Ext.swift */; };
 		7CE848502BFE25240073C739 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8484F2BFE25240073C739 /* ProgressView.swift */; };
+		7CE848532BFF6FEF0073C739 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848522BFF6FEF0073C739 /* UIView+Ext.swift */; };
+		7CE848552BFF730C0073C739 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848542BFF730C0073C739 /* HomeCoordinator.swift */; };
+		7CE848572BFF731D0073C739 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848562BFF731D0073C739 /* OnboardingCoordinator.swift */; };
+		7CE848592BFF742B0073C739 /* ChildCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848582BFF742B0073C739 /* ChildCoordinator.swift */; };
+		7CE8485B2BFF74570073C739 /* ParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8485A2BFF74570073C739 /* ParentCoordinator.swift */; };
+		7CE8485F2BFF77CB0073C739 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8485E2BFF77CB0073C739 /* HomeViewController.swift */; };
+		7CE848612BFF77D70073C739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848602BFF77D70073C739 /* OnboardingViewController.swift */; };
+		7CE848652BFF7C9B0073C739 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848642BFF7C9B0073C739 /* String+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +52,14 @@
 		7CE8484B2BFE19EE0073C739 /* BottomContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomContainerView.swift; sourceTree = "<group>"; };
 		7CE8484D2BFE20290073C739 /* CGFloat+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CGFloat+Ext.swift"; sourceTree = "<group>"; };
 		7CE8484F2BFE25240073C739 /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		7CE848522BFF6FEF0073C739 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
+		7CE848542BFF730C0073C739 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		7CE848562BFF731D0073C739 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		7CE848582BFF742B0073C739 /* ChildCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildCoordinator.swift; sourceTree = "<group>"; };
+		7CE8485A2BFF74570073C739 /* ParentCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentCoordinator.swift; sourceTree = "<group>"; };
+		7CE8485E2BFF77CB0073C739 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		7CE848602BFF77D70073C739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		7CE848642BFF7C9B0073C739 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +141,8 @@
 		7CE8482E2BFE09A70073C739 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				7CE8482F2BFE09B60073C739 /* Coordinator.swift */,
-				7CE848312BFE0AF50073C739 /* MainCoordinator.swift */,
+				7CE8485C2BFF74AE0073C739 /* Protocols */,
+				7CE8485D2BFF759A0073C739 /* Classes */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -145,6 +161,7 @@
 		7CE848342BFE0BBB0073C739 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				7CE848312BFE0AF50073C739 /* MainCoordinator.swift */,
 				7CE848392BFE0CBA0073C739 /* SplashViewController.swift */,
 			);
 			path = Splash;
@@ -153,6 +170,8 @@
 		7CE848352BFE0BC90073C739 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				7CE848562BFF731D0073C739 /* OnboardingCoordinator.swift */,
+				7CE848602BFF77D70073C739 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -160,6 +179,8 @@
 		7CE848362BFE0BD30073C739 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7CE848542BFF730C0073C739 /* HomeCoordinator.swift */,
+				7CE8485E2BFF77CB0073C739 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -203,10 +224,37 @@
 		7CE848482BFE15930073C739 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				7CE848492BFE15C90073C739 /* UIFont+Ext.swift */,
-				7CE8484D2BFE20290073C739 /* CGFloat+Ext.swift */,
+				7CE848512BFF6FDB0073C739 /* Extensions */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		7CE848512BFF6FDB0073C739 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7CE848492BFE15C90073C739 /* UIFont+Ext.swift */,
+				7CE8484D2BFE20290073C739 /* CGFloat+Ext.swift */,
+				7CE848522BFF6FEF0073C739 /* UIView+Ext.swift */,
+				7CE848642BFF7C9B0073C739 /* String+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7CE8485C2BFF74AE0073C739 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7CE8482F2BFE09B60073C739 /* Coordinator.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		7CE8485D2BFF759A0073C739 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				7CE8485A2BFF74570073C739 /* ParentCoordinator.swift */,
+				7CE848582BFF742B0073C739 /* ChildCoordinator.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,16 +331,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CE848652BFF7C9B0073C739 /* String+Ext.swift in Sources */,
 				7CE8484A2BFE15C90073C739 /* UIFont+Ext.swift in Sources */,
+				7CE848532BFF6FEF0073C739 /* UIView+Ext.swift in Sources */,
 				7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */,
+				7CE848612BFF77D70073C739 /* OnboardingViewController.swift in Sources */,
+				7CE848572BFF731D0073C739 /* OnboardingCoordinator.swift in Sources */,
 				7CE848322BFE0AF50073C739 /* MainCoordinator.swift in Sources */,
 				7CE848302BFE09B60073C739 /* Coordinator.swift in Sources */,
+				7CE848552BFF730C0073C739 /* HomeCoordinator.swift in Sources */,
 				7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */,
 				7CE8483A2BFE0CBA0073C739 /* SplashViewController.swift in Sources */,
+				7CE8485B2BFF74570073C739 /* ParentCoordinator.swift in Sources */,
 				7CE8484E2BFE20290073C739 /* CGFloat+Ext.swift in Sources */,
+				7CE8485F2BFF77CB0073C739 /* HomeViewController.swift in Sources */,
 				7CE848502BFE25240073C739 /* ProgressView.swift in Sources */,
 				7CE8483E2BFE0E220073C739 /* AnimatedHeart.swift in Sources */,
 				7CE8484C2BFE19EE0073C739 /* BottomContainerView.swift in Sources */,
+				7CE848592BFF742B0073C739 /* ChildCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
