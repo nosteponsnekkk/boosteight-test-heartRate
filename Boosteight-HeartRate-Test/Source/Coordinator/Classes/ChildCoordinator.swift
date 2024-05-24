@@ -10,11 +10,12 @@ import UIKit
 public class ChildCoordinator: Coordinator {
     
     public var navigationController: UINavigationController
-    public weak var parent: ParentCoordinator?
+    public var childCoordinators: [ChildCoordinator] = []
+    
+    public weak var parent: Coordinator?
 
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        start()
     }
     deinit {
         print("Parent (\(String.init(describing: parent.self))) did finish child: \(String(describing: self))")

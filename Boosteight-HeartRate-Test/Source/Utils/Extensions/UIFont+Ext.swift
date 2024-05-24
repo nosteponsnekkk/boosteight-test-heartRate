@@ -13,4 +13,7 @@ public extension UIFont {
     static func rubikRegular(ofSize size: CGFloat) -> UIFont? {
         UIFont.init(name: "Rubik-Regular", size: size)
     }
+    static func rubikMedium(ofSize size: CGFloat) -> UIFont? {
+        UIFont.init(name: "Rubik-Medium", size: size)
+    }
 }

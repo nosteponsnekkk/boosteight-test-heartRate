@@ -11,21 +11,33 @@ public final class HomeViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
 
+    //MARK: - Subviews
+    private lazy var bottomContainer: BottomContainerView = {
+        let view = BottomContainerView()
+        return view
+    }()
+    
+    
+    //MARK: - Lifecycle
     public override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupView()
+       
+    }
+    public override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        bottomContainer.frame = .init(x: 0,
+                                      y: view.bounds.maxY - view.bounds.height/4,
+                                      width: view.bounds.width,
+                                      height: view.bounds.height/3.5)
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: - Methods
+    private func setupView(){
+        view.backgroundColor = .backgroundBlue
+        view.addSubview(bottomContainer)
     }
-    */
+
 
 }
