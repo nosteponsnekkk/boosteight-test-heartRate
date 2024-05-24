@@ -28,14 +28,20 @@ public final class OnboardingViewModel: NSObject, ObservableObject {
 }
 extension OnboardingViewModel: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
+    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
+        let vc = pendingViewControllers.first as? OnboardingPageViewController
+        vc?.prepareForAnimation()
+    }
+    
     public func pageViewController(_ pageViewController: UIPageViewController,
                               didFinishAnimating finished: Bool,
                               previousViewControllers: [UIViewController],
                             transitionCompleted completed: Bool) {
         guard completed,
-              let currentVC = pageViewController.viewControllers?.first,
+              let currentVC = pageViewController.viewControllers?.first as? OnboardingPageViewController,
               let index = viewControllers.firstIndex(of: currentVC) else { return }
         pageIndex = index
+        currentVC.performAnimation()
     }
     
     public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

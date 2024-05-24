@@ -54,7 +54,7 @@ public final class SplashViewController: UIViewController {
         bottomContainer.frame = .init(x: 0,
                                       y: view.bounds.maxY - view.bounds.height/4,
                                       width: view.bounds.width,
-                                      height: view.bounds.height/3.5)
+                                      height: view.bounds.height/4)
         
         progressView.frame.size = .init(width: bottomContainer.bounds.width - bottomContainer.bounds.width/8, height: 15)
         progressView.center = CGPoint(x: bottomContainer.bounds.midX, y: bottomContainer.bounds.midY)

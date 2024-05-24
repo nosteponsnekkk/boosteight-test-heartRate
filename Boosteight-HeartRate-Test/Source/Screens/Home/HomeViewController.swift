@@ -29,7 +29,7 @@ public final class HomeViewController: UIViewController {
         bottomContainer.frame = .init(x: 0,
                                       y: view.bounds.maxY - view.bounds.height/4,
                                       width: view.bounds.width,
-                                      height: view.bounds.height/3.5)
+                                      height: view.bounds.height/4)
         
     }
     

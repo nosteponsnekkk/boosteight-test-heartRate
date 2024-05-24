@@ -12,7 +12,7 @@ public final class MainCoordinator: ParentCoordinator {
     private let didFinishOnboarding: Bool
 
     override init(navigationController: UINavigationController) {
-        didFinishOnboarding = /*UserDefaults.standard.object(forKey: .didFinishOnboarding) as? Bool ??*/ false
+        didFinishOnboarding = UserDefaults.standard.object(forKey: .didFinishOnboarding) as? Bool ?? false
         super.init(navigationController: navigationController)
     }
     
