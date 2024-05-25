@@ -11,7 +11,6 @@ public final class CombinedAnimatedImage: UIView {
 
     private let backgroundImage: UIImage
     private let animatedImages: [UIImage]
-    private var imageViews: [UIImageView] = []
     
     //MARK: - Subviews
     private lazy var backgroundImageView: UIImageView = {
@@ -19,7 +18,8 @@ public final class CombinedAnimatedImage: UIView {
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
-    
+    private var imageViews: [UIImageView] = []
+
     //MARK: - Init
     init(backgroundImage: UIImage, animatedImages: [UIImage]) {
         self.backgroundImage = backgroundImage
@@ -55,16 +55,12 @@ public final class CombinedAnimatedImage: UIView {
             imageViews.append(imageView)
         }
     }
-    
     //MARK: - Animations
-    public func prepareForAnimation(){
-        imageViews.forEach { $0.alpha = 0 }
-    }
     public func animateIn(){
         for (index, imageView) in imageViews.enumerated() {
             imageView.alpha = 0
             imageView.transform = .identity.scaledBy(x: 0.8, y: 0.8).translatedBy(x: 0, y: index != 0 ? 200 : -200)
-            UIView.animate(withDuration: 0.5, delay: 0.25 * Double(index), usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2) {
+            UIView.animate(withDuration: 0.5, delay: 0.25 * Double(index + 1), usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2) {
                 imageView.alpha = 1
                 imageView.transform = .identity
             }

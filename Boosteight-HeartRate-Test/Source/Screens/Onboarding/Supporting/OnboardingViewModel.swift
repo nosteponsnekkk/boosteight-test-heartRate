@@ -10,74 +10,51 @@ import Combine
 
 public final class OnboardingViewModel: NSObject, ObservableObject {
     
-    public let viewControllers: [UIViewController] = [
-        OnboardingPageViewController(page: .first),
-        OnboardingPageViewController(page: .second),
-        OnboardingPageViewController(page: .third)
-    ]
-    
     @Published public var pageIndex = 0
+    @Published private var offset: CGFloat = 0
     private var cancellables: Set<AnyCancellable> = []
     
-    public func bind(completion: @escaping (_ pageIndex: Int) -> Void){
+    public func bind(pageIndex: @escaping (_ pageIndex: Int) -> Void,
+                     offset: @escaping (_ offset: CGFloat) -> Void){
         $pageIndex
-            .sink(receiveValue: completion)
+            .sink(receiveValue: pageIndex)
+            .store(in: &cancellables)
+        
+        $offset
+            .sink(receiveValue: offset)
             .store(in: &cancellables)
     }
     
 }
-extension OnboardingViewModel: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-    
-    public func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-        let vc = pendingViewControllers.first as? OnboardingPageViewController
-        vc?.prepareForAnimation()
+
+extension OnboardingViewModel: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return OnboardingPage.allCases.count
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController,
-                              didFinishAnimating finished: Bool,
-                              previousViewControllers: [UIViewController],
-                            transitionCompleted completed: Bool) {
-        guard completed,
-              let currentVC = pageViewController.viewControllers?.first as? OnboardingPageViewController,
-              let index = viewControllers.firstIndex(of: currentVC) else { return }
-        pageIndex = index
-        currentVC.performAnimation()
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withClass: OnboardingPageCollectionViewCell.self, for: indexPath)
+        cell.setPage(page: OnboardingPage.allCases[indexPath.item])
+        return cell
+        
+    }
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.frame.size
     }
     
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = viewControllers.firstIndex(of: viewController) else {
-            return nil
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let cell = cell as? OnboardingPageCollectionViewCell {
+            cell.performAnimation()
         }
-        
-        let previousIndex = viewControllerIndex - 1
-        
-        guard previousIndex >= 0 else {
-            return nil
-        }
-        
-        guard viewControllers.count > previousIndex else {
-            return nil
-        }
-        
-        return viewControllers[previousIndex]
     }
-    
-    public func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        guard let viewControllerIndex = viewControllers.firstIndex(of: viewController) else {
-            return nil
-        }
+    public func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard scrollView.contentSize != .zero else { return }
+        let numberOfPages = OnboardingPage.allCases.count
+        let pageSize = scrollView.contentSize.width / CGFloat(numberOfPages)
+        let offset = scrollView.contentOffset.x
+        pageIndex = Int(offset / pageSize)
         
-        let nextIndex = viewControllerIndex + 1
-        
-        guard viewControllers.count != nextIndex else {
-            return nil
-        }
-        
-        guard viewControllers.count > nextIndex else {
-            return nil
-        }
-        
-        return viewControllers[nextIndex]
+        self.offset = offset
     }
-    
+ 
 }

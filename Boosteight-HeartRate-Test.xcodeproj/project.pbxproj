@@ -11,7 +11,6 @@
 		7C27FCD32C0005B800E59A16 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FCD22C0005B800E59A16 /* PageIndicator.swift */; };
 		7C27FCD62C000D3800E59A16 /* RedLongButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C27FCD52C000D3800E59A16 /* RedLongButton.swift */; };
 		7C752E3A2C004D6A00BD2D4F /* CombinedAnimatedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C752E392C004D6A00BD2D4F /* CombinedAnimatedImage.swift */; };
-		7C752E3D2C005CDA00BD2D4F /* IndicatorCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C752E3C2C005CDA00BD2D4F /* IndicatorCellCollectionViewCell.swift */; };
 		7C752E3F2C005D8D00BD2D4F /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C752E3E2C005D8D00BD2D4F /* UICollectionView+Ext.swift */; };
 		7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F02BFCF1610073C739 /* AppDelegate.swift */; };
 		7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F22BFCF1610073C739 /* SceneDelegate.swift */; };
@@ -37,7 +36,7 @@
 		7CE848612BFF77D70073C739 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848602BFF77D70073C739 /* OnboardingViewController.swift */; };
 		7CE848652BFF7C9B0073C739 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE848642BFF7C9B0073C739 /* String+Ext.swift */; };
 		7CE8486B2BFF88430073C739 /* ParentCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8486A2BFF88430073C739 /* ParentCoordinator.swift */; };
-		7CE8486D2BFFF3E90073C739 /* OnboardingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8486C2BFFF3E90073C739 /* OnboardingPageViewController.swift */; };
+		7CE8486D2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE8486C2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,7 +44,6 @@
 		7C27FCD22C0005B800E59A16 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
 		7C27FCD52C000D3800E59A16 /* RedLongButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedLongButton.swift; sourceTree = "<group>"; };
 		7C752E392C004D6A00BD2D4F /* CombinedAnimatedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedAnimatedImage.swift; sourceTree = "<group>"; };
-		7C752E3C2C005CDA00BD2D4F /* IndicatorCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		7C752E3E2C005D8D00BD2D4F /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		7CE847ED2BFCF1610073C739 /* Boosteight-HeartRate-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boosteight-HeartRate-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE847F02BFCF1610073C739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +71,7 @@
 		7CE848602BFF77D70073C739 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		7CE848642BFF7C9B0073C739 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		7CE8486A2BFF88430073C739 /* ParentCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentCoordinator.swift; sourceTree = "<group>"; };
-		7CE8486C2BFFF3E90073C739 /* OnboardingPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageViewController.swift; sourceTree = "<group>"; };
+		7CE8486C2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingPageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,7 @@
 		7C752E3B2C005CC900BD2D4F /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				7C752E3C2C005CDA00BD2D4F /* IndicatorCellCollectionViewCell.swift */,
+				7CE8486C2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -305,7 +303,6 @@
 			children = (
 				7CE848562BFF731D0073C739 /* OnboardingCoordinator.swift */,
 				7C27FCD02C0000AA00E59A16 /* OnboardingViewModel.swift */,
-				7CE8486C2BFFF3E90073C739 /* OnboardingPageViewController.swift */,
 			);
 			path = Supporting;
 			sourceTree = "<group>";
@@ -385,7 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CE848652BFF7C9B0073C739 /* String+Ext.swift in Sources */,
-				7CE8486D2BFFF3E90073C739 /* OnboardingPageViewController.swift in Sources */,
+				7CE8486D2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift in Sources */,
 				7CE8484A2BFE15C90073C739 /* UIFont+Ext.swift in Sources */,
 				7CE848532BFF6FEF0073C739 /* UIView+Ext.swift in Sources */,
 				7C752E3F2C005D8D00BD2D4F /* UICollectionView+Ext.swift in Sources */,
@@ -397,7 +394,6 @@
 				7CE8486B2BFF88430073C739 /* ParentCoordinator.swift in Sources */,
 				7CE848322BFE0AF50073C739 /* MainCoordinator.swift in Sources */,
 				7CE848302BFE09B60073C739 /* Coordinator.swift in Sources */,
-				7C752E3D2C005CDA00BD2D4F /* IndicatorCellCollectionViewCell.swift in Sources */,
 				7CE848552BFF730C0073C739 /* HomeCoordinator.swift in Sources */,
 				7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */,
 				7CE8483A2BFE0CBA0073C739 /* SplashViewController.swift in Sources */,
