@@ -71,6 +71,8 @@ public final class SplashViewController: UIViewController {
             .onComplete { [weak self] in
                 self?.animateOut()
             }
+        navigationItem.backButtonDisplayMode = .minimal
+
     }
     
     //MARK: - Animations

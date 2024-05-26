@@ -76,7 +76,6 @@ public final class OnboardingViewController: UIViewController {
     private func bind(){
         viewModel.bind { [weak self] pageIndex in
             DispatchQueue.main.async {
-//                self?.pageIndicator.pageIndex = pageIndex
                 //Weird text change in figma
                 if pageIndex != 1 {
                     self?.button.setTitle("Почати!", for: .normal)
@@ -110,15 +109,19 @@ public final class OnboardingViewController: UIViewController {
     //MARK: - Animations
     private func animateIn(){
         button.alpha = 0
+        pageIndicator.alpha = 0
+        collectionView.alpha = 0
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.button.alpha = 1
+            self?.pageIndicator.alpha = 1
+            self?.collectionView.alpha = 1
         }
     }
     private func animateOut(completion: @escaping () -> Void){
         UIView.animate(withDuration: 0.3) { [weak self] in
             self?.button.alpha = 0
             self?.pageIndicator.alpha = 0
-            
+            self?.collectionView.alpha = 0
         } completion: { _ in
             completion()
         }

@@ -130,8 +130,9 @@ public final class PageIndicator: UIView {
         return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     private func animateDot(dot: UIView, toWidth width: CGFloat, toX x: CGFloat, toColor color: UIColor) {
+        let safeWidth = max(bounds.height, width)
         UIView.animate(withDuration: 0.3) {
-            dot.frame = .init(x: x, y: 0, width: width, height: dot.frame.height)
+            dot.frame = .init(x: x, y: 0, width: safeWidth, height: dot.frame.height)
             dot.backgroundColor = color
         }
     }

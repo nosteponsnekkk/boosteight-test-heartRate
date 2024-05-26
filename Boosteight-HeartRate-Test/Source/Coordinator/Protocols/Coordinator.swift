@@ -18,6 +18,7 @@ extension Coordinator {
     func startChild(_ child: ChildCoordinator) {
         childCoordinators.append(child)
         child.parent = self
+        navigationController.viewControllers.removeAll()
         child.start()
     }
     
