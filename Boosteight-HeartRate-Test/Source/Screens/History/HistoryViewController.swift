@@ -10,14 +10,14 @@ import UIKit
 public final class HistoryViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
-    private let viewModel = MeasurmentsViewModel()
+    private let viewModel: MeasurmentsViewModel
     
     private var shallMoveButton: Bool {
         let offset: CGFloat = 15
         let numberOfItems = CGFloat(viewModel.measurments.count)
         let itemHeight: CGFloat = 98
-        let totalSpace = numberOfItems * (itemHeight) + (numberOfItems - 1) * offset
-        return totalSpace >= view.bounds.height - view.bounds.height/8
+        let totalSpace = numberOfItems * (itemHeight) + (numberOfItems - 1) * offset + 20
+        return totalSpace >= view.bounds.height - view.bounds.height/4
     }
     
     //MARK: - Subviews
@@ -28,7 +28,7 @@ public final class HistoryViewController: UIViewController {
     
     private lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
-        view.contentInset = .init(top: shallMoveButton ? 20 : 0, left: 0, bottom: 0, right: 0)
+        view.contentInset = .init(top: 20, left: 0, bottom: 0, right: 0)
         return view
     }()
     private lazy var collectionView: UICollectionView = {
@@ -53,6 +53,16 @@ public final class HistoryViewController: UIViewController {
         return label
     }()
     private var clearButton: RedLongButton?
+    
+    //MARK: - Init
+    init(_ viewModel: MeasurmentsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - Lifecycle
     public override func viewDidLoad() {
@@ -80,16 +90,16 @@ public final class HistoryViewController: UIViewController {
                                      width: view.bounds.width,
                                      height: totalSpace)
         
-        scrollView.frame = .init(x: 0, y: 0,
+        scrollView.frame = .init(x: 0, y: navigationController?.navigationBar.frame.maxY ?? .zero,
                                  width: view.bounds.width,
-                                 height: view.bounds.height)
+                                 height: view.bounds.height - (navigationController?.navigationBar.frame.maxY ?? .zero))
         
         if shallMoveButton {
             scrollView.contentSize = .init(width: collectionView.frame.size.width, height: totalSpace + 40 + (clearButton?.frame.height ?? 0) + 10)
             clearButton?.center = CGPoint(x: scrollView.bounds.midX, y: collectionView.frame.maxY + (clearButton?.frame.height ?? 0)/2 + 20)
         } else {
-            scrollView.contentSize = collectionView.frame.size
-            clearButton?.center = CGPoint(x: bottomContainer.bounds.midX, y: bottomContainer.bounds.midY + 44 - 14)
+            scrollView.contentSize = .init(width: collectionView.frame.size.width, height: totalSpace + 20)
+            clearButton?.center = CGPoint(x: bottomContainer.frame.midX, y: bottomContainer.frame.midY + 44 - 14)
         }
     }
     
@@ -117,19 +127,29 @@ public final class HistoryViewController: UIViewController {
         clearButton = .init(title: "Очистити історію", action: clearHistory)
         if !shallMoveButton {
             if let clearButton {
-                bottomContainer.addSubview(clearButton)
+                view.addSubview(clearButton)
                 viewDidLayoutSubviews()
+                view.bringSubviewToFront(clearButton)
             }
         } else {
             if let clearButton {
                 scrollView.addSubview(clearButton)
                 viewDidLayoutSubviews()
+                scrollView.bringSubviewToFront(clearButton)
             }
 
         }
     }
     
-    private func clearHistory(){}
+    private func clearHistory(){
+        presentAlert(withTitle: "Ви впевненні?",
+                     withMessage: "Ви впевненні що хочете видалити всі ваші вимірювання?",
+                     withCancelTitle: "Ні",
+                     withConfirmTitle: "Так") { [weak self] in
+            guard let self else { return }
+            viewModel.deleteAllMeasurements()
+        }
+    }
     
     
     private func bind(){

@@ -98,7 +98,7 @@ public final class ProgressView: UIView {
         Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { [weak self] timer in
             guard let self else { timer.invalidate(); return }
             if progress >= 1 { timer.invalidate(); return }
-            progress += 0.5
+            progress += 0.01
         }
     }
     public func onComplete(completion: @escaping () -> Void) {

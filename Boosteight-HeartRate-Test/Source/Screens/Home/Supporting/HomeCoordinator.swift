@@ -9,9 +9,11 @@ import UIKit
 
 public final class HomeCoordinator: ChildCoordinator {
     
+    private let viewModel = MeasurmentsViewModel()
+    
     public override func start() {
         super.start()
-        let vc = HomeViewController()
+        let vc = HomeViewController(viewModel)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: false)
     }
@@ -29,7 +31,7 @@ extension HomeCoordinator {
         navigationController.popToViewController(ofClass: HomeViewController.self)
     }
     func goHistory(){
-        let vc = HistoryViewController()
+        let vc = HistoryViewController(viewModel)
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }

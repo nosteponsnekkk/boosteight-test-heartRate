@@ -64,6 +64,7 @@ public final class ResultDetailViewController: UIViewController {
         navigationItem.setHidesBackButton(true, animated: true)
         let barButton = CustomBarButtonItem(type: .history, action: coordinator?.goHistory)
         barButton.setSize(.init(width: 120, height: 38))
+        navigationItem.rightBarButtonItem = barButton
         view.addSubview(bottomContainer)
         bottomContainer.addSubview(button)
         view.addSubview(cardView)

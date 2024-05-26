@@ -12,7 +12,7 @@ public final class HomeViewController: UIViewController {
     
     weak var coordinator: HomeCoordinator?
     
-    private let viewModel = MeasurmentsViewModel()
+    private let viewModel: MeasurmentsViewModel
     
     //MARK: - Heart rate Managment
     var heartRateManager: HeartRateManager?
@@ -73,6 +73,16 @@ public final class HomeViewController: UIViewController {
         view.alpha = 0
         return view
     }()
+    
+    //MARK: - Init
+    init(_ viewModel: MeasurmentsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     //MARK: - Lifecycle
     public override func viewDidLoad() {
@@ -217,6 +227,8 @@ extension HomeViewController: HeartManagmentDelegate {
         guard let bpm else { return }
         currentBPM = Float(bpm)
         progressView.progress = 1
+        let model = HeartMeasurement(date: .now, result: bpm)
+        viewModel.createMeasurement(model)
         let haptic = UIImpactFeedbackGenerator(style: .soft)
         haptic.prepare()
         haptic.impactOccurred()
@@ -225,7 +237,7 @@ extension HomeViewController: HeartManagmentDelegate {
             self?.stopMeasuring()
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
-            self?.coordinator?.openDetail(for: .init(date: .now, result: bpm))
+            self?.coordinator?.openDetail(for: model)
         }
     }
     

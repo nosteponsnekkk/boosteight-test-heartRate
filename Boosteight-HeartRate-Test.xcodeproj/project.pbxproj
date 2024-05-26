@@ -36,6 +36,10 @@
 		7CAFBC2D2C036CC200EAC27B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */; };
 		7CAFBC2F2C036D2F00EAC27B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2E2C036D2F00EAC27B /* HistoryViewController.swift */; };
 		7CAFBC312C03796A00EAC27B /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC302C03796A00EAC27B /* HistoryCollectionViewCell.swift */; };
+		7CAFBC352C0385FA00EAC27B /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC332C0385FA00EAC27B /* CoreDataModel.xcdatamodeld */; };
+		7CAFBC382C03863200EAC27B /* HeartMeasurementEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC362C03863200EAC27B /* HeartMeasurementEntity.swift */; };
+		7CAFBC3C2C03866600EAC27B /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC3B2C03866600EAC27B /* CoreDataManager.swift */; };
+		7CAFBC3E2C03899D00EAC27B /* UIVIewController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC3D2C03899D00EAC27B /* UIVIewController+Ext.swift */; };
 		7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F02BFCF1610073C739 /* AppDelegate.swift */; };
 		7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F22BFCF1610073C739 /* SceneDelegate.swift */; };
 		7CE847FA2BFCF1620073C739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE847F92BFCF1620073C739 /* Assets.xcassets */; };
@@ -93,6 +97,10 @@
 		7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
 		7CAFBC2E2C036D2F00EAC27B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		7CAFBC302C03796A00EAC27B /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		7CAFBC342C0385FA00EAC27B /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
+		7CAFBC362C03863200EAC27B /* HeartMeasurementEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeartMeasurementEntity.swift; sourceTree = "<group>"; };
+		7CAFBC3B2C03866600EAC27B /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		7CAFBC3D2C03899D00EAC27B /* UIVIewController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIewController+Ext.swift"; sourceTree = "<group>"; };
 		7CE847ED2BFCF1610073C739 /* Boosteight-HeartRate-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boosteight-HeartRate-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE847F02BFCF1610073C739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE847F22BFCF1610073C739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -205,6 +213,24 @@
 			path = Detail;
 			sourceTree = "<group>";
 		};
+		7CAFBC322C0385F100EAC27B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				7CAFBC3A2C03863600EAC27B /* Entities */,
+				7CAFBC332C0385FA00EAC27B /* CoreDataModel.xcdatamodeld */,
+				7CAFBC3B2C03866600EAC27B /* CoreDataManager.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		7CAFBC3A2C03863600EAC27B /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7CAFBC362C03863200EAC27B /* HeartMeasurementEntity.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		7CE847E42BFCF1610073C739 = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +269,7 @@
 		7CE8482B2BFE07850073C739 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7CAFBC322C0385F100EAC27B /* CoreData */,
 				7C752E542C02EBF200BD2D4F /* Measurment Module */,
 				7C752E4B2C02D03300BD2D4F /* Model */,
 				7CE848332BFE0BB40073C739 /* Screens */,
@@ -388,6 +415,7 @@
 				7CAFBC1D2C03034500EAC27B /* Array+Ext.swift */,
 				7CAFBC242C03435A00EAC27B /* Date+Ext.swift */,
 				7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */,
+				7CAFBC3D2C03899D00EAC27B /* UIVIewController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -515,12 +543,14 @@
 				7CAFBC212C0318E000EAC27B /* ResultDetailViewController.swift in Sources */,
 				7C752E5A2C02ED3500BD2D4F /* PulseDetector.swift in Sources */,
 				7CAFBC292C03644700EAC27B /* MeasurmentSectionInfo.swift in Sources */,
+				7CAFBC382C03863200EAC27B /* HeartMeasurementEntity.swift in Sources */,
 				7CE848612BFF77D70073C739 /* OnboardingViewController.swift in Sources */,
 				7C752E482C02BB7E00BD2D4F /* HelperBarButton.swift in Sources */,
 				7C752E512C02D4AB00BD2D4F /* MeasureButton.swift in Sources */,
 				7CE848572BFF731D0073C739 /* OnboardingCoordinator.swift in Sources */,
 				7C752E3A2C004D6A00BD2D4F /* CombinedAnimatedImage.swift in Sources */,
 				7CAFBC2F2C036D2F00EAC27B /* HistoryViewController.swift in Sources */,
+				7CAFBC3C2C03866600EAC27B /* CoreDataManager.swift in Sources */,
 				7CE8486B2BFF88430073C739 /* ParentCoordinator.swift in Sources */,
 				7C752E5E2C02ED8900BD2D4F /* AVCaptureDevice+Ext.swift in Sources */,
 				7C752E582C02ED2D00BD2D4F /* Filter.swift in Sources */,
@@ -533,7 +563,9 @@
 				7C752E622C02F63600BD2D4F /* UIColor+Ext.swift in Sources */,
 				7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */,
 				7CE8483A2BFE0CBA0073C739 /* SplashViewController.swift in Sources */,
+				7CAFBC3E2C03899D00EAC27B /* UIVIewController+Ext.swift in Sources */,
 				7C752E4A2C02C67D00BD2D4F /* UIImage+Ext.swift in Sources */,
+				7CAFBC352C0385FA00EAC27B /* CoreDataModel.xcdatamodeld in Sources */,
 				7CAFBC1E2C03034500EAC27B /* Array+Ext.swift in Sources */,
 				7C752E422C0180BC00BD2D4F /* CustomNavigationController.swift in Sources */,
 				7CAFBC312C03796A00EAC27B /* HistoryCollectionViewCell.swift in Sources */,
@@ -771,6 +803,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7CAFBC332C0385FA00EAC27B /* CoreDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7CAFBC342C0385FA00EAC27B /* CoreDataModel.xcdatamodel */,
+			);
+			currentVersion = 7CAFBC342C0385FA00EAC27B /* CoreDataModel.xcdatamodel */;
+			path = CoreDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7CE847E52BFCF1610073C739 /* Project object */;
 }
