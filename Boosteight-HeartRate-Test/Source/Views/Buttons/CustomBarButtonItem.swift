@@ -17,8 +17,8 @@ public final class CustomBarButtonItem: UIBarButtonItem {
         return btn
     }()
     
-    init(type: BarButtonConfiguration, action: @escaping () -> Void){
-        self.onTapAction = action
+    init(type: BarButtonConfiguration, action: (() -> Void)? = nil){
+        self.onTapAction = action ?? {}
         self.type = type
         super.init()
         customView = button
@@ -31,5 +31,12 @@ public final class CustomBarButtonItem: UIBarButtonItem {
     
     @objc private func performAction(){
         onTapAction()
+    }
+    
+    public func setSize(_ size: CGSize) {
+        let currWidth = customView?.widthAnchor.constraint(equalToConstant: size.width)
+        currWidth?.isActive = true
+        let currHeight = customView?.heightAnchor.constraint(equalToConstant: size.height)
+        currHeight?.isActive = true
     }
 }

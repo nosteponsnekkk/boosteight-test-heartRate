@@ -19,7 +19,7 @@ public final class ResultDetailViewController: UIViewController {
         return view
     }()
     private lazy var button: RedLongButton = {
-        return RedLongButton(title: "Готово", action: coordinator?.goBack)
+        return RedLongButton(title: "Готово", action: coordinator?.goHome)
     }()
     private lazy var cardView: MeasurmentCard = {
         let view = MeasurmentCard(model: model)
@@ -62,9 +62,8 @@ public final class ResultDetailViewController: UIViewController {
         title = "Результат"
         view.backgroundColor = .backgroundBlue
         navigationItem.setHidesBackButton(true, animated: true)
-        navigationItem.rightBarButtonItem = CustomBarButtonItem(type: .history, action: {
-            print("History")
-        })
+        let barButton = CustomBarButtonItem(type: .history, action: coordinator?.goHistory)
+        barButton.setSize(.init(width: 120, height: 38))
         view.addSubview(bottomContainer)
         bottomContainer.addSubview(button)
         view.addSubview(cardView)

@@ -25,7 +25,12 @@ extension HomeCoordinator {
         vc.coordinator = self
         navigationController.pushViewController(vc, animated: true)
     }
-    func goBack(){
-        navigationController.popViewController(animated: true)
+    func goHome(){
+        navigationController.popToViewController(ofClass: HomeViewController.self)
+    }
+    func goHistory(){
+        let vc = HistoryViewController()
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
     }
 }

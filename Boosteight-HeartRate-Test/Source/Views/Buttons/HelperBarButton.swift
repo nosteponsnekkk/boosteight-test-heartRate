@@ -9,6 +9,7 @@ import UIKit
 
 public enum BarButtonConfiguration: String {
     case history = "Історія"
+    case back = ""
 }
 
 public final class HelperBarButton: UIButton {
@@ -31,9 +32,13 @@ public final class HelperBarButton: UIButton {
         switch type {
         case .history:
             setImage(.history, for: .normal)
+        case .back:
+            setImage(.back, for: .normal)
         }
         addTarget(self, action: #selector(performAction), for: .touchUpInside)
-        setTitle(type.rawValue, for: .normal)
+        if type != .back {
+            setTitle(type.rawValue, for: .normal)
+        }
         titleLabel?.textColor = .white
         tintColor = .white
         titleLabel?.textAlignment = .left
@@ -42,15 +47,20 @@ public final class HelperBarButton: UIButton {
     
     public override func layoutSubviews() {
         super.layoutSubviews()
-        imageView?.frame = .init(x: bounds.maxX - 38,
-                                 y: bounds.midY - 38/2,
-                                 width: 38,
-                                 height: 38)
-
-        titleLabel?.frame = .init(x: (imageView?.frame.minX ?? 0) - 68 - 10 ,
-                                  y: 0,
-                                  width: 68,
-                                  height: bounds.height)
+        if type == .back {
+            imageView?.frame.size = .init(width: 26, height: 25)
+        } else {
+            imageView?.frame = .init(x: bounds.maxX - 38,
+                                     y: bounds.midY - 38/2,
+                                     width: 38,
+                                     height: 38)
+        }
+        if type != .back {
+            titleLabel?.frame = .init(x: (imageView?.frame.minX ?? 0) - 68 - 10 ,
+                                      y: 0,
+                                      width: 68,
+                                      height: bounds.height)
+        }
     }
     
     @objc private func performAction() {

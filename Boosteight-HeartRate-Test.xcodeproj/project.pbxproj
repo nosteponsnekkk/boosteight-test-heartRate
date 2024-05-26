@@ -33,6 +33,9 @@
 		7CAFBC272C0346A000EAC27B /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC262C0346A000EAC27B /* CustomSlider.swift */; };
 		7CAFBC292C03644700EAC27B /* MeasurmentSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC282C03644700EAC27B /* MeasurmentSectionInfo.swift */; };
 		7CAFBC2B2C0367F100EAC27B /* MeasurementInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2A2C0367F100EAC27B /* MeasurementInfoLabel.swift */; };
+		7CAFBC2D2C036CC200EAC27B /* UINavigationController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */; };
+		7CAFBC2F2C036D2F00EAC27B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2E2C036D2F00EAC27B /* HistoryViewController.swift */; };
+		7CAFBC312C03796A00EAC27B /* HistoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC302C03796A00EAC27B /* HistoryCollectionViewCell.swift */; };
 		7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F02BFCF1610073C739 /* AppDelegate.swift */; };
 		7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F22BFCF1610073C739 /* SceneDelegate.swift */; };
 		7CE847FA2BFCF1620073C739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE847F92BFCF1620073C739 /* Assets.xcassets */; };
@@ -87,6 +90,9 @@
 		7CAFBC262C0346A000EAC27B /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		7CAFBC282C03644700EAC27B /* MeasurmentSectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurmentSectionInfo.swift; sourceTree = "<group>"; };
 		7CAFBC2A2C0367F100EAC27B /* MeasurementInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementInfoLabel.swift; sourceTree = "<group>"; };
+		7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Ext.swift"; sourceTree = "<group>"; };
+		7CAFBC2E2C036D2F00EAC27B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		7CAFBC302C03796A00EAC27B /* HistoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		7CE847ED2BFCF1610073C739 /* Boosteight-HeartRate-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boosteight-HeartRate-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE847F02BFCF1610073C739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE847F22BFCF1610073C739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				7CE8486C2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift */,
+				7CAFBC302C03796A00EAC27B /* HistoryCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -316,6 +323,7 @@
 		7CE848372BFE0BEC0073C739 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				7CAFBC2E2C036D2F00EAC27B /* HistoryViewController.swift */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -379,6 +387,7 @@
 				7C752E612C02F63600BD2D4F /* UIColor+Ext.swift */,
 				7CAFBC1D2C03034500EAC27B /* Array+Ext.swift */,
 				7CAFBC242C03435A00EAC27B /* Date+Ext.swift */,
+				7CAFBC2C2C036CC200EAC27B /* UINavigationController+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +520,7 @@
 				7C752E512C02D4AB00BD2D4F /* MeasureButton.swift in Sources */,
 				7CE848572BFF731D0073C739 /* OnboardingCoordinator.swift in Sources */,
 				7C752E3A2C004D6A00BD2D4F /* CombinedAnimatedImage.swift in Sources */,
+				7CAFBC2F2C036D2F00EAC27B /* HistoryViewController.swift in Sources */,
 				7CE8486B2BFF88430073C739 /* ParentCoordinator.swift in Sources */,
 				7C752E5E2C02ED8900BD2D4F /* AVCaptureDevice+Ext.swift in Sources */,
 				7C752E582C02ED2D00BD2D4F /* Filter.swift in Sources */,
@@ -526,8 +536,10 @@
 				7C752E4A2C02C67D00BD2D4F /* UIImage+Ext.swift in Sources */,
 				7CAFBC1E2C03034500EAC27B /* Array+Ext.swift in Sources */,
 				7C752E422C0180BC00BD2D4F /* CustomNavigationController.swift in Sources */,
+				7CAFBC312C03796A00EAC27B /* HistoryCollectionViewCell.swift in Sources */,
 				7CE8484E2BFE20290073C739 /* CGFloat+Ext.swift in Sources */,
 				7CE8485F2BFF77CB0073C739 /* HomeViewController.swift in Sources */,
+				7CAFBC2D2C036CC200EAC27B /* UINavigationController+Ext.swift in Sources */,
 				7CAFBC252C03435A00EAC27B /* Date+Ext.swift in Sources */,
 				7C27FCD12C0000AA00E59A16 /* OnboardingViewModel.swift in Sources */,
 				7CE848502BFE25240073C739 /* ProgressView.swift in Sources */,

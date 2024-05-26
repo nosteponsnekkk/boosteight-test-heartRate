@@ -124,10 +124,9 @@ public final class HomeViewController: UIViewController {
         let navigationController = navigationController as? CustomNavigationController
         navigationController?.isNavigationBarHidden = false
         navigationController?.animateIn()
-        navigationItem.rightBarButtonItem = CustomBarButtonItem(type: .history, action: {
-            print("History")
-        })
-        
+        let barButton = CustomBarButtonItem(type: .history, action: coordinator?.goHistory)
+        barButton.setSize(.init(width: 120, height: 38))
+        navigationItem.rightBarButtonItem = barButton
         animatedHeart.simpleAnimateIn()
     }
     private func bind(){

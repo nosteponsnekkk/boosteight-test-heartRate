@@ -115,7 +115,7 @@ public final class MeasurmentCard: UIView {
     
     //MARK: - Methods
     private func setupView(){
-        backgroundColor = .white
+        backgroundColor = .darkenWhite
         addSubview(resultHeaderLabel)
         addSubview(resultLabel)
         addSubview(timeLabel)

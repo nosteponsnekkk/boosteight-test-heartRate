@@ -26,7 +26,7 @@ public final class BottomContainerView: UIView {
         
         layer.mask = shapeLayer
         
-        UIColor.white.setFill()
+        UIColor.darkenWhite.setFill()
         path.fill()
         
     }

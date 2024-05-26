@@ -9,7 +9,23 @@ import Foundation
 import Combine
 
 public final class MeasurmentsViewModel: ObservableObject {
-    @Published private var data: [HeartMeasurement] = []
+    @Published private var data: [HeartMeasurement] = [
+        .mockFastData,
+        .mockNormalData,
+        .mockSlowData,
+        .mockFastData,
+        .mockNormalData,
+        .mockSlowData,
+        .mockFastData,
+        .mockNormalData,
+        .mockSlowData,
+        .mockFastData,
+        .mockNormalData,
+        .mockSlowData,
+        .mockFastData,
+        .mockNormalData,
+        .mockSlowData
+    ]
     private var cancellables: Set<AnyCancellable> = []
     
     
