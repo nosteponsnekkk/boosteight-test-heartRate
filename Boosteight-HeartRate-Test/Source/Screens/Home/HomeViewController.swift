@@ -216,10 +216,18 @@ extension HomeViewController: HeartManagmentDelegate {
     
     public func didCompleteRating(heartRate bpm: Int?) {
         guard let bpm else { return }
-        DispatchQueue.main.async { [weak self] in
+        currentBPM = Float(bpm)
+        progressView.progress = 1
+        let haptic = UIImpactFeedbackGenerator(style: .soft)
+        haptic.prepare()
+        haptic.impactOccurred()
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [weak self] in
             self?.stopMeasuring()
         }
-        print(bpm)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [weak self] in
+            self?.coordinator?.openDetail(for: .init(date: .now, result: bpm))
+        }
     }
     
     

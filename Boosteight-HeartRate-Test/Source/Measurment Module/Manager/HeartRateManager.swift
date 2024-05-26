@@ -45,7 +45,7 @@ class HeartRateManager: NSObject {
     var bpms: [Int] = [] {
         didSet {
             if bpms.count >= 20 {
-                delegate?.didCompleteRating(heartRate: bpms.mostFrequent())
+                delegate?.didCompleteRating(heartRate: bpms.averageOfThreeMostFrequent())
                 delegate = nil
                 bpms.removeAll()
             } else {
@@ -70,6 +70,8 @@ class HeartRateManager: NSObject {
     
     init(cameraType: CameraType, preferredSpec: VideoSpec?, previewContainer: CALayer?) {
         super.init()
+        print("Heart rate manager has been initialized")
+
         videoDevice = cameraType.captureDevice()
         
         // MARK: - Setup Video Format
@@ -112,6 +114,9 @@ class HeartRateManager: NSObject {
         }
         captureSession.addOutput(videoDataOutput)
         videoConnection = videoDataOutput.connection(with: .video)
+    }
+    deinit {
+        print("Heart rate manager has been de-initialized")
     }
     
     func startCapture() {

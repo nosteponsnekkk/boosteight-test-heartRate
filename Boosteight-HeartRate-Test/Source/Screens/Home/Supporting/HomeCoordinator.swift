@@ -19,3 +19,13 @@ public final class HomeCoordinator: ChildCoordinator {
     
     
 }
+extension HomeCoordinator {
+    func openDetail(for model: HeartMeasurement) {
+        let vc = ResultDetailViewController(model: model)
+        vc.coordinator = self
+        navigationController.pushViewController(vc, animated: true)
+    }
+    func goBack(){
+        navigationController.popViewController(animated: true)
+    }
+}

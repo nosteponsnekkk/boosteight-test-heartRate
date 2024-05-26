@@ -12,8 +12,8 @@ public final class RedLongButton: UIButton {
     private let action: () -> Void
     
     //MARK: - Init
-    init(title: String, action: @escaping () -> Void){
-        self.action = action
+    init(title: String, action: (() -> Void)? = nil){
+        self.action = action ?? {}
         super.init(frame: .zero)
         titleLabel?.textColor = .white
         titleLabel?.font = .rubikMedium(ofSize: 16)

@@ -27,6 +27,12 @@
 		7C752E602C02F19700BD2D4F /* HomeViewController+HeartMeasurement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C752E5F2C02F19700BD2D4F /* HomeViewController+HeartMeasurement.swift */; };
 		7C752E622C02F63600BD2D4F /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C752E612C02F63600BD2D4F /* UIColor+Ext.swift */; };
 		7CAFBC1E2C03034500EAC27B /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC1D2C03034500EAC27B /* Array+Ext.swift */; };
+		7CAFBC212C0318E000EAC27B /* ResultDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC202C0318E000EAC27B /* ResultDetailViewController.swift */; };
+		7CAFBC232C033F8E00EAC27B /* MeasurmentCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC222C033F8E00EAC27B /* MeasurmentCard.swift */; };
+		7CAFBC252C03435A00EAC27B /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC242C03435A00EAC27B /* Date+Ext.swift */; };
+		7CAFBC272C0346A000EAC27B /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC262C0346A000EAC27B /* CustomSlider.swift */; };
+		7CAFBC292C03644700EAC27B /* MeasurmentSectionInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC282C03644700EAC27B /* MeasurmentSectionInfo.swift */; };
+		7CAFBC2B2C0367F100EAC27B /* MeasurementInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAFBC2A2C0367F100EAC27B /* MeasurementInfoLabel.swift */; };
 		7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F02BFCF1610073C739 /* AppDelegate.swift */; };
 		7CE847F32BFCF1610073C739 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CE847F22BFCF1610073C739 /* SceneDelegate.swift */; };
 		7CE847FA2BFCF1620073C739 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CE847F92BFCF1620073C739 /* Assets.xcassets */; };
@@ -75,6 +81,12 @@
 		7C752E5F2C02F19700BD2D4F /* HomeViewController+HeartMeasurement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+HeartMeasurement.swift"; sourceTree = "<group>"; };
 		7C752E612C02F63600BD2D4F /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
 		7CAFBC1D2C03034500EAC27B /* Array+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		7CAFBC202C0318E000EAC27B /* ResultDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultDetailViewController.swift; sourceTree = "<group>"; };
+		7CAFBC222C033F8E00EAC27B /* MeasurmentCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurmentCard.swift; sourceTree = "<group>"; };
+		7CAFBC242C03435A00EAC27B /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
+		7CAFBC262C0346A000EAC27B /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
+		7CAFBC282C03644700EAC27B /* MeasurmentSectionInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurmentSectionInfo.swift; sourceTree = "<group>"; };
+		7CAFBC2A2C0367F100EAC27B /* MeasurementInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasurementInfoLabel.swift; sourceTree = "<group>"; };
 		7CE847ED2BFCF1610073C739 /* Boosteight-HeartRate-Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Boosteight-HeartRate-Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CE847F02BFCF1610073C739 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CE847F22BFCF1610073C739 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,8 +157,8 @@
 		7C752E4B2C02D03300BD2D4F /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7C752E4C2C02D04E00BD2D4F /* HeartMeasurement.swift */,
 				7C752E4E2C02D08B00BD2D4F /* MeasurmentsViewModel.swift */,
+				7C752E4C2C02D04E00BD2D4F /* HeartMeasurement.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +188,14 @@
 				7C752E5B2C02ED6100BD2D4F /* HeartRateManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		7CAFBC1F2C0318BA00EAC27B /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				7CAFBC202C0318E000EAC27B /* ResultDetailViewController.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		7CE847E42BFCF1610073C739 = {
@@ -260,6 +280,7 @@
 				7CE848342BFE0BBB0073C739 /* Splash */,
 				7CE848352BFE0BC90073C739 /* Onboarding */,
 				7CE848362BFE0BD30073C739 /* Home */,
+				7CAFBC1F2C0318BA00EAC27B /* Detail */,
 				7CE848372BFE0BEC0073C739 /* History */,
 			);
 			path = Screens;
@@ -318,6 +339,10 @@
 				7CE8484F2BFE25240073C739 /* ProgressView.swift */,
 				7C27FCD22C0005B800E59A16 /* PageIndicator.swift */,
 				7C752E392C004D6A00BD2D4F /* CombinedAnimatedImage.swift */,
+				7CAFBC222C033F8E00EAC27B /* MeasurmentCard.swift */,
+				7CAFBC262C0346A000EAC27B /* CustomSlider.swift */,
+				7CAFBC282C03644700EAC27B /* MeasurmentSectionInfo.swift */,
+				7CAFBC2A2C0367F100EAC27B /* MeasurementInfoLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,6 +378,7 @@
 				7C752E5D2C02ED8900BD2D4F /* AVCaptureDevice+Ext.swift */,
 				7C752E612C02F63600BD2D4F /* UIColor+Ext.swift */,
 				7CAFBC1D2C03034500EAC27B /* Array+Ext.swift */,
+				7CAFBC242C03435A00EAC27B /* Date+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -469,12 +495,17 @@
 				7CE848652BFF7C9B0073C739 /* String+Ext.swift in Sources */,
 				7CE8486D2BFFF3E90073C739 /* OnboardingPageCollectionViewCell.swift in Sources */,
 				7CE8484A2BFE15C90073C739 /* UIFont+Ext.swift in Sources */,
+				7CAFBC272C0346A000EAC27B /* CustomSlider.swift in Sources */,
+				7CAFBC2B2C0367F100EAC27B /* MeasurementInfoLabel.swift in Sources */,
 				7CE848532BFF6FEF0073C739 /* UIView+Ext.swift in Sources */,
 				7C752E5C2C02ED6100BD2D4F /* HeartRateManager.swift in Sources */,
 				7C752E3F2C005D8D00BD2D4F /* UICollectionView+Ext.swift in Sources */,
+				7CAFBC232C033F8E00EAC27B /* MeasurmentCard.swift in Sources */,
 				7CE847F12BFCF1610073C739 /* AppDelegate.swift in Sources */,
 				7C27FCD62C000D3800E59A16 /* RedLongButton.swift in Sources */,
+				7CAFBC212C0318E000EAC27B /* ResultDetailViewController.swift in Sources */,
 				7C752E5A2C02ED3500BD2D4F /* PulseDetector.swift in Sources */,
+				7CAFBC292C03644700EAC27B /* MeasurmentSectionInfo.swift in Sources */,
 				7CE848612BFF77D70073C739 /* OnboardingViewController.swift in Sources */,
 				7C752E482C02BB7E00BD2D4F /* HelperBarButton.swift in Sources */,
 				7C752E512C02D4AB00BD2D4F /* MeasureButton.swift in Sources */,
@@ -497,6 +528,7 @@
 				7C752E422C0180BC00BD2D4F /* CustomNavigationController.swift in Sources */,
 				7CE8484E2BFE20290073C739 /* CGFloat+Ext.swift in Sources */,
 				7CE8485F2BFF77CB0073C739 /* HomeViewController.swift in Sources */,
+				7CAFBC252C03435A00EAC27B /* Date+Ext.swift in Sources */,
 				7C27FCD12C0000AA00E59A16 /* OnboardingViewModel.swift in Sources */,
 				7CE848502BFE25240073C739 /* ProgressView.swift in Sources */,
 				7C752E602C02F19700BD2D4F /* HomeViewController+HeartMeasurement.swift in Sources */,

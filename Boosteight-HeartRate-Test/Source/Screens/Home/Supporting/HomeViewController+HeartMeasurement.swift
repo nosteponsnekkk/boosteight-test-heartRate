@@ -24,9 +24,10 @@ extension HomeViewController {
         heartRateManager?.stopCapture()
         heartRateManager?.measurementStartedFlag = false
         heartRateManager?.imageBufferHandler = nil
+        heartRateManager?.timer.invalidate()
         heartRateManager = nil
         toggleTorch(status: false)
-
+        
     }
     private func makeHeartRateManager() -> HeartRateManager {
         let specs = VideoSpec(fps: 30, size: CGSize(width: 300, height: 300))
@@ -48,6 +49,7 @@ extension HomeViewController {
                     
                 } else {
                     // Correct pulse
+                    print(pulse)
                     guard heartRateManager.bpms.count < 20 else { return }
                     currentBPM = pulse
                     heartRateManager.bpms.append(Int(pulse))
@@ -123,7 +125,10 @@ extension HomeViewController {
             heartRateManager?.validFrameCounter = 0
             heartRateManager?.measurementStartedFlag = false
             heartRateManager?.pulseDetector.reset()
-            heartRateManager?.bpms.removeAll()
+            heartRateManager?.timer.invalidate()
+            if heartRateManager?.bpms.isEmpty == false{
+                heartRateManager?.bpms.removeAll()
+            }
             currentBPM = .zero
             DispatchQueue.main.async { [weak self] in
                 self?.measurmentView.state = .initial
