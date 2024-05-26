@@ -36,11 +36,20 @@ public final class CustomNavigationController: UINavigationController {
     }
     
     public func animateIn(){
-        navigationBar.transform = .identity.translatedBy(x: 0, y: -navigationBar.frame.height * 2)
-        UIView.animate(withDuration: 0.5 , delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2) { [weak self] in
+        navigationBar.transform = .identity.translatedBy(x: 0, y: -navigationBar.frame.height)
+        UIView.animate(withDuration: 0.5 , delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 0.4) { [weak self] in
             self?.navigationBar.transform = .identity
         }
     }
+    public func animateOut(){
+        let transform = CGAffineTransform.identity.translatedBy(x: 0, y: -navigationBar.frame.height * 2.2)
+        UIView.animate(withDuration: 0.5 , delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.2) { [weak self] in
+            self?.navigationBar.transform = transform
+        } completion: { [weak self] _ in
+            self?.isNavigationBarHidden = true
+        }
+    }
+
     public override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }

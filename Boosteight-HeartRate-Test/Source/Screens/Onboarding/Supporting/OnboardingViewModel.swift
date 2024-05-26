@@ -17,10 +17,12 @@ public final class OnboardingViewModel: NSObject, ObservableObject {
     public func bind(pageIndex: @escaping (_ pageIndex: Int) -> Void,
                      offset: @escaping (_ offset: CGFloat) -> Void){
         $pageIndex
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: pageIndex)
             .store(in: &cancellables)
         
         $offset
+            .receive(on: DispatchQueue.main)
             .sink(receiveValue: offset)
             .store(in: &cancellables)
     }
